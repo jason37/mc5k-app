@@ -12,15 +12,20 @@
 
 <script>
 import axios from "axios";
+import {useUserStore} from "@/stores/user.js";
 
 export default {
   name: 'LogInForm',
 
-  data: function () {
+  data: () => {
     return {
       username: '',
       passwd: '',
+      user: {},
     }
+  },
+  created() {
+    this.user = useUserStore();
   },
   methods: {
     logMeIn: async function() {
@@ -40,6 +45,7 @@ export default {
         console.info(res.status)
         if (res.status === 'success') {
           this.success = true;
+          this.user.authToken = res.data.token
           return this.$router.push({name:'home'});
         }
         console.info(res.data)
