@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <div class="">
     <header class="mb-6">
-      <h1 class="text-5xl font-600 font-sans">
+      <h1 class="text-4xl uppercase font-bold font-sans tracking-widest">
         ✨Message Capsules 5000✨
       </h1>
 
