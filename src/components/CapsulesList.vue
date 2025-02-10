@@ -1,13 +1,14 @@
 <template>
 
-  <h2>My Message Capsules</h2>
+  <h2 class="font-sans font-200 text-2xl">
+    My Message Capsules</h2>
 
-<ul>
+<ul class="font-mono">
   <li v-for="(capsule, index) in user.capsules">
-    Message #{{ capsule.id}}
-    <p>
+      #{{ capsule.id}}
+
       {{capsule.message}}
-    </p>
+
   </li>
 </ul>
 
