@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Tabs value="0"  class="bg-slate-400">
+    <Tabs value="0" class="bg-slate-400">
       <TabList>
         <Tab value="0">View capsules</Tab>
         <Tab value="1">Create a capsule</Tab>
@@ -16,17 +16,11 @@
         <TabPanel value="2">
           Logout
         </TabPanel>
-
       </TabPanels>
     </Tabs>
-
-
-
   </main>
 </template>
-
 <script>
-
 import CapsulesList from '@/components/CapsulesList.vue'
 import CreateMessage from "@/components/CreateMessage.vue";
 import { useUserStore} from "@/stores/user.js";

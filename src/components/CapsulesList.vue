@@ -8,7 +8,8 @@
     <template #list="slotProps">
       <div class="flex flex-col">
         <div v-for="msg in slotProps.items" :key="msg.id">
-          {{msg.message}} {{msg.open_time}} opened:{{msg.is_opened}} user:{{ msg.user_id }}
+
+          <capsule-message :message="msg" />
         </div>
       </div>
     </template>
@@ -16,12 +17,14 @@
 </template>
 
 <script>
+import CapsuleMessage from "@/components/CapsuleMessage.vue";
 import DataView from 'primevue/dataview';
 import { useUserStore} from "@/stores/user.js";
 
 export default {
   name: 'CapsulesList',
   components: {
+    CapsuleMessage,
     DataView,
   },
   data: () => {
