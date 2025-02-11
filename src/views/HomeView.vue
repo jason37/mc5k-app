@@ -5,7 +5,7 @@
       <TabList>
         <Tab value="0">View capsules</Tab>
         <Tab value="1">Create a capsule</Tab>
-        <Tab value="2">Logout</Tab>
+        <Tab value="2" @click="logMeOut">Logout</Tab>
       </TabList>
       <TabPanels>
         <TabPanel value="0">
@@ -30,7 +30,7 @@
 
 import CapsulesList from '@/components/CapsulesList.vue'
 import CreateMessage from "@/components/CreateMessage.vue";
-
+import { useUserStore} from "@/stores/user.js";
 import Tabs from 'primevue/tabs';
 import TabList from 'primevue/tablist';
 import Tab from 'primevue/tab';
@@ -50,6 +50,17 @@ export default {
   },
   created() {
     console.info('HomeView')
+    this.user = useUserStore();
+    if (!this.user.loggedIn) {
+      this.logMeOut();
+    }
   },
+  methods: {
+    logMeOut()  {
+      console.info('logMeOut clicked');
+      this.user.logout();
+      return this.$router.push({name:'login'});
+    },
+  }
 }
 </script>

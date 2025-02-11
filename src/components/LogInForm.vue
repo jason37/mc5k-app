@@ -1,21 +1,49 @@
 <template>
   <form @submit.prevent="logMeIn()">
-  <label for="username">username</label>
-  <input id="username" v-model="username" class="border-b">
-  <label for="passwd">password</label>
-  <input id="passwd" v-model="passwd" type="password" class="border-b">
+    <div class="px-6 py-20 md:px-12 lg:px-20 text-slate-100">
+      <div class="bg-slate-700 p-6 shadow rounded-border w-full lg:w-6/12 mx-auto">
+        <div class="text-center mb-8">
+          <div class="text-3xl font-medium mb-4">Log in</div>
+        </div>
 
-  <button>Log In</button>
+        <div>
+          <label for="username" class="text-surface-900 dark:text-surface-0 font-medium mb-2 block">Username</label>
+          <input id="username" type="text" v-model="username" class="border-b w-full mb-4" />
 
+          <label for="passwd" class="text-surface-900 dark:text-surface-0 font-medium mb-2 block">Password</label>
+          <input id="passwd" type="password" v-model="passwd" class="border-b w-full mb-4" />
+
+
+          <button class="w-full bg-green-500 rounded-md">Log in</button>
+        </div>
+      </div>
+    </div>
   </form>
+
+
 </template>
+
+
+
+
+
 
 <script>
 import axios from "axios";
 import {useUserStore} from "@/stores/user.js";
 
+import Button from 'primevue/button';
+import Checkbox from 'primevue/checkbox';
+import InputText from 'primevue/inputtext';
+
+
 export default {
   name: 'LogInForm',
+  components: {
+    Button,
+    Checkbox,
+    InputText,
+  },
 
   data: () => {
     return {
@@ -30,9 +58,8 @@ export default {
   methods: {
     logMeIn: async function() {
 
-
       const url = 'http://localhost:8000/api/login';
-      this.success = false;
+
       this.error = null;
 
       try {
@@ -44,8 +71,7 @@ export default {
 
         console.info(res.status)
         if (res.status === 'success') {
-          this.success = true;
-          this.user.authToken = res.data.token
+          this.user.login(res.data);
           return this.$router.push({name:'home'});
         }
         console.info(res.data)

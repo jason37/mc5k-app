@@ -19,7 +19,6 @@
 
 import DataView from 'primevue/dataview';
 
-
 import { useUserStore} from "@/stores/user.js";
 
 export default {
@@ -34,9 +33,12 @@ export default {
   },
   created() {
     console.info('CapsulesList')
-    this.user = useUserStore()
-    this.user.fetchCapsules()
-    console.info(this.user.capsules)
+    this.user = useUserStore();
+    if (this.user.loggedIn) {
+      this.user.fetchCapsules();
+      console.info(this.user.capsules)
+    }
+
   },
 }
 

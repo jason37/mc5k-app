@@ -6,12 +6,7 @@ export const useUserStore = defineStore('user', {
 			return {
 				loggedIn: false,
 				authToken: null,
-				capsules: [
-					// {
-					// 	id: 1,
-					// 	message: 'Yo de yo yo word'
-					// }
-				],
+				capsules: [],
 			}
 		},
 		getters: {
@@ -19,12 +14,16 @@ export const useUserStore = defineStore('user', {
 		},
 		actions: {
 
-			login() {
-				this.loggedIn = true
+			login(auth) {
+				this.loggedIn = true;
+				this.authToken = auth.token;
 			},
 			logout()
 			{
-				this.loggedIn = false
+				this.loggedIn = false;
+				this.authToken = null;
+				this.capsules = [];
+
 			},
 			fetchCapsules() {
 				console.info(`fetchCapsules() token is ${this.authToken}`)
