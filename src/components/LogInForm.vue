@@ -1,5 +1,5 @@
 <template>
-    <div class="px-6 py-20 md:px-12 lg:px-20 text-slate-100">
+    <div class="px-6 py-8 lg:py-20 md:px-12 lg:px-20 text-slate-100">
       <div class="p-6 shadow rounded-border w-full mx-auto">
         <div class="text-center mb-8">
           <div class="text-3xl font-medium mb-4">Log in</div>
