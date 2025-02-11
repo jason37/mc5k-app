@@ -16,9 +16,7 @@
 </template>
 
 <script>
-
 import DataView from 'primevue/dataview';
-
 import { useUserStore} from "@/stores/user.js";
 
 export default {

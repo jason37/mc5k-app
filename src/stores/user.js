@@ -17,13 +17,22 @@ export const useUserStore = defineStore('user', {
 			login(auth) {
 				this.loggedIn = true;
 				this.authToken = auth.token;
+				localStorage.setItem('token', this.authToken);
 			},
 			logout()
 			{
 				this.loggedIn = false;
 				this.authToken = null;
 				this.capsules = [];
-
+				localStorage.clear();
+			},
+			isLoggedIn() {
+				this.authToken = localStorage.getItem('token');
+				if (this.authToken) {
+					this.loggedIn = true;
+					return true;
+				}
+				return false;
 			},
 			fetchCapsules() {
 				console.info(`fetchCapsules() token is ${this.authToken}`)

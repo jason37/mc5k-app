@@ -50,7 +50,7 @@ export default {
   created() {
     console.info('HomeView')
     this.user = useUserStore();
-    if (!this.user.loggedIn) {
+    if (!this.user.isLoggedIn()) {
       this.logMeOut();
     }
   },

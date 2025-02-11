@@ -1,8 +1,3 @@
-<script setup>
-import { RouterView } from 'vue-router'
-
-</script>
-
 <template>
   <div class="">
     <header class="mb-6">
@@ -15,7 +10,7 @@ import { RouterView } from 'vue-router'
     <RouterView />
   </div>
 </template>
+<script>
+  import { RouterView } from 'vue-router'
 
-<style scoped>
-
-</style>
+</script>

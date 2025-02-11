@@ -30,6 +30,7 @@ export default {
       username: 'test@example.com',
       passwd: 'password',
       user: {},
+      error: null,
     }
   },
   created() {
@@ -39,8 +40,6 @@ export default {
     logMeIn: async function() {
 
       const url = 'http://localhost:8000/api/login';
-
-      this.error = null;
 
       try {
         console.info(`user: ${this.username} pass: ${this.passwd}`)
