@@ -3,13 +3,13 @@
     Create a message
   </h2>
   <Textarea rows="12" cols="40"></Textarea>
-  <div class="mt-4">
+  <div class="mt-4 flex">
     <IftaLabel>
       <DatePicker id="openDate" v-model="openDate" show-icon></DatePicker>
       <label for="openDate">Open date</label>
     </IftaLabel>
 
-    <Button label="Save" icon="pi pi-check" iconPos="right" />
+    <Button label="Save" icon="pi pi-check" iconPos="right" class="ml-8" />
   </div>
 
 </template>

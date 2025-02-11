@@ -1,54 +1,34 @@
 <template>
-  <form @submit.prevent="logMeIn()">
     <div class="px-6 py-20 md:px-12 lg:px-20 text-slate-100">
-      <div class="bg-slate-700 p-6 shadow rounded-border w-full lg:w-6/12 mx-auto">
+      <div class="p-6 shadow rounded-border w-full mx-auto">
         <div class="text-center mb-8">
           <div class="text-3xl font-medium mb-4">Log in</div>
         </div>
-
         <div>
           <label for="username" class="text-surface-900 dark:text-surface-0 font-medium mb-2 block">Username</label>
           <input id="username" type="text" v-model="username" class="border-b w-full mb-4" />
-
           <label for="passwd" class="text-surface-900 dark:text-surface-0 font-medium mb-2 block">Password</label>
           <input id="passwd" type="password" v-model="passwd" class="border-b w-full mb-4" />
-
-
-          <button class="w-full bg-green-500 rounded-md">Log in</button>
+          <Button label="Log in" class="w-full" @click="logMeIn"/>
         </div>
       </div>
     </div>
-  </form>
-
 
 </template>
-
-
-
-
-
-
 <script>
 import axios from "axios";
 import {useUserStore} from "@/stores/user.js";
-
 import Button from 'primevue/button';
-import Checkbox from 'primevue/checkbox';
-import InputText from 'primevue/inputtext';
-
 
 export default {
   name: 'LogInForm',
   components: {
     Button,
-    Checkbox,
-    InputText,
   },
-
   data: () => {
     return {
-      username: '',
-      passwd: '',
+      username: 'test@example.com',
+      passwd: 'password',
       user: {},
     }
   },
@@ -83,6 +63,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

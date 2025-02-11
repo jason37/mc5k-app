@@ -1,7 +1,6 @@
 <template>
   <main>
-
-    <Tabs value="0">
+    <Tabs value="0"  class="bg-slate-400">
       <TabList>
         <Tab value="0">View capsules</Tab>
         <Tab value="1">Create a capsule</Tab>
