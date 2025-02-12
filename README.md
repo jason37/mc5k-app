@@ -1,18 +1,20 @@
-# mc5k-app
+# ✨Message Capsules 5000 App✨
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Tech Stack
+- Vue 3
+- Vue Router
+- Vite
+- Pinia
+- Tailwind CSS
+- PrimeVue – UI components
+- PrimeBlocks – login form UI
+- Cypress
 
 ## Project Setup
 
 ```sh
+git clone https://github.com/jason37/mc5k-app.git
+cd mc5k-app
 npm install
 ```
 
@@ -21,6 +23,8 @@ npm install
 ```sh
 npm run dev
 ```
+At this point the app should be available at [http://localhost:5173](http://localhost:5173). (The port may vary. See the Vite output after `npm run dev`).
+Login as user `test@example.com` and password `password` (auto–filled for your convience). 
 
 ### Compile and Minify for Production
 
@@ -28,24 +32,9 @@ npm run dev
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
 ```sh
 npm run test:e2e:dev
 ```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
+This will take a minute upon the first run as the Cypress test runner has to be downloaded.
