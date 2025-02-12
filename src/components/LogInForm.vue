@@ -42,18 +42,16 @@ export default {
       const url = 'http://localhost:8000/api/login';
 
       try {
-        console.info(`user: ${this.username} pass: ${this.passwd}`)
         const res = await axios.post(url,  {
           email: this.username,
           password: this.passwd }
         ).then(res => res.data);
 
-        console.info(res.status)
         if (res.status === 'success') {
           this.user.login(res.data);
           return this.$router.push({name:'home'});
         }
-        console.info(res.data)
+
       } catch (err) {
         this.error = err.message;
       }

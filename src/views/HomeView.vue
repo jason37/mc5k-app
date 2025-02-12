@@ -42,7 +42,6 @@ export default {
     TabPanels,
   },
   created() {
-    console.info('HomeView')
     this.user = useUserStore();
     if (!this.user.isLoggedIn()) {
       this.logMeOut();
@@ -50,7 +49,6 @@ export default {
   },
   methods: {
     logMeOut()  {
-      console.info('logMeOut clicked');
       this.user.logout();
       return this.$router.push({name:'login'});
     },

@@ -35,11 +35,9 @@ export const useUserStore = defineStore('user', {
 				return false;
 			},
 			fetchCapsules() {
-				console.info(`fetchCapsules() token is ${this.authToken}`)
 				axios.post('http://localhost:8000/api/capsules', null, {
 					headers : { Authorization: `Bearer ${this.authToken}`}
 				}).then(response => {
-					console.info(response)
 					this.capsules = response.data.data
 				})
 			}

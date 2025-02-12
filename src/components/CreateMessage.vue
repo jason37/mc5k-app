@@ -54,18 +54,12 @@ export default {
   },
   methods: {
     messageOk() {
-      let ok = false;
-
-
       return this.message && this.openDate;
     },
     save: async function() {
       if (this.messageOk()) {
-
         const url = 'http://localhost:8000/api/capsules/create';
         const date = new Date(this.openDate).toISOString().slice(0,10);
-
-        console.info(`message: ${this.message} open date: ${date}`)
 
         try {
           const res = await axios.post(url, {
@@ -75,7 +69,6 @@ export default {
             headers : { Authorization: `Bearer ${this.user.authToken}`}
           }
           ).then(res => {
-            console.info(res.data)
             this.message = this.openDate = null;
             this.saved = true;
             this.error = false;
