@@ -12,6 +12,9 @@
 
 ## Project Setup
 
+### Prerequisites
+Setup the API service as described at [https://github.com/jason37/mc5k-api](https://github.com/jason37/mc5k-api).
+
 ```sh
 git clone https://github.com/jason37/mc5k-app.git
 cd mc5k-app
